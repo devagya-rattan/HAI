@@ -30,7 +30,8 @@ pipeline {
         }
         stage('push image') {
             steps {
-                sh 'docker push devagyarattan/python-trivy-demo'
+                sh 'docker tag python-trivy-demo:latest devagyarattan/python-trivy-demo:latest'
+                sh 'docker push devagyarattan/python-trivy-demo:latest'
             }
         }
         stage('Trivy Image Scan') {
