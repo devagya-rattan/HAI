@@ -1,4 +1,4 @@
-#!/home/devagya/Desktop/AllFiles/devops-projects/Health_Ai/.venv/bin/python3
+#!/home/devagya/Desktop/AllFiles/devops-projects/Health_Ai/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
