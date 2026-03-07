@@ -30,7 +30,7 @@ pipeline {
         }
         stage('push image') {
             steps {
-                sh 'docker push devagyarattan/python-trivy-demo:2'
+                sh 'docker push devagyarattan/python-trivy-demo:${BUILD_NUMBER}'
             }
         }
         stage('Trivy Image Scan') {
