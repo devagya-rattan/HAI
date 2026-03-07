@@ -23,7 +23,16 @@ pipeline {
                 }
             }
         }
-
+        stage('login to dockerhub') {
+            steps {
+                sh 'docker login -u devagyarattan -p Devagya@123'
+            }
+        }
+        stage('push image') {
+            steps {
+                sh 'docker push devagyarattan/python-trivy-demo:2'
+            }
+        }
         stage('Trivy Image Scan') {
             steps {
                 sh "mkdir -p ${TRIVY_CACHE_DIR} reports"
@@ -58,7 +67,7 @@ pipeline {
             }
         }
     }
-
+    
     post {
         always {
             archiveArtifacts artifacts: 'reports/*', fingerprint: true
