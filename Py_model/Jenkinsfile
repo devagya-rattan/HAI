@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        APP_DIR = "9-trivy-artifact-project"
+        APP_DIR = "Py_model"
         DOCKER_IMAGE = "python-trivy-demo"
         IMAGE_NAME = "${DOCKER_IMAGE}:${BUILD_NUMBER}"
         TRIVY_CACHE_DIR = "${WORKSPACE}/.trivy_cache"
