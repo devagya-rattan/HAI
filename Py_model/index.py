@@ -4,16 +4,16 @@ import joblib
 import numpy as np
 from paho.mqtt import client as mqtt_client
 
-joblib_file = "model_filename.pkl"
+joblib_file = "health_risk_model.pkl"
 loaded_model_joblib = joblib.load(joblib_file)
-broker = "13.233.244.186"
+broker = "13.233.207.XXX" # Enter your personal server/broker IP address
 port = 1883
 topic = "esp32/body-temp"
 # Generate a Client ID with the subscribe prefix.
 client_id = f"subscribe-{random.randint(0, 100)}"
 
-username = "devagya"
-password = "devagya"
+username = "deXXXXX" # Enter your personal broker cred
+password = "deXXXXX" # Enter your personal broker cred
 
 
 def connect_mqtt() -> mqtt_client:
@@ -32,11 +32,11 @@ def connect_mqtt() -> mqtt_client:
 
 def subscribe(client: mqtt_client):
     def on_message(client, userdata, msg):
-        Paitent_id = int(input("Enter paitent ID: "))
-        age = int(input("Enter age: "))
-        weight = int(input("Enter weight: "))
-        height = int(input("Enter height: "))
-        gender = int(input("Enter gender: "))
+        Paitent_id = float(input("Enter paitent ID: "))
+        age = float(input("Enter age: "))
+        weight = float(input("Enter weight: "))
+        height = float(input("Enter height: "))
+        gender = float(input("Enter gender: "))
         heartrate = 72
         spo2 = 98
         data = pd.DataFrame(
