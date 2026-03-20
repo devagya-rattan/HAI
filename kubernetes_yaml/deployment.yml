@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: heath-ai
+  name: health-ai
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: health-ai
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: health-ai
+    spec:
+      containers:
+      - image: devagyarattan/health-ai
+        name: health-ai
+        imagePullPolicy: Always
+        ports: 
+        - containerPort: 80

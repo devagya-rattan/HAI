@@ -6,14 +6,14 @@ from paho.mqtt import client as mqtt_client
 
 joblib_file = "health_risk_model.pkl"
 loaded_model_joblib = joblib.load(joblib_file)
-broker = "13.233.207.XXX" # Enter your personal server/broker IP address
+broker = "65.0.172.94" # Enter your personal server/broker IP address
 port = 1883
 topic = "esp32/body-temp"
 # Generate a Client ID with the subscribe prefix.
 client_id = f"subscribe-{random.randint(0, 100)}"
 
-username = "deXXXXX" # Enter your personal broker cred
-password = "deXXXXX" # Enter your personal broker cred
+username = "devagya" # Enter your personal broker cred
+password = "devagya" # Enter your personal broker cred
 
 
 def connect_mqtt() -> mqtt_client:
@@ -63,9 +63,9 @@ def subscribe(client: mqtt_client):
 
 def run():
     client = connect_mqtt()
-    subscribe(client)
-    client.loop_forever()
+    # subscribe(client)
+    client.loop()
 
 
-if __name__ == "__main__":
-    run()
+print("Service is up and running!")
+run()
