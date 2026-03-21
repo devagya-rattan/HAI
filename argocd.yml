@@ -1,0 +1,13 @@
+kind: Application
+metadata:
+  name: health-ai
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/devagya-rattan/HAI
+    path: kubernetes_yaml
+    targetRevision: HEAD
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
