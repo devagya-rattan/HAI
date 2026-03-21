@@ -22,4 +22,5 @@ jobs:
           username: ${{ secrets.USER }}
           TARGET: "/home/ubuntu"
       - name: Execute commands to deploy on argocd
-        run: mkdir touch
+        run: |
+          mkdir touch
