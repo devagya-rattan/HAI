@@ -30,5 +30,8 @@ jobs:
           key: ${{ secrets.PASSWORD }}
           script: |
            sudo su -
-           sudo kubectl wait --for condition=established --timeout=60s crd/applications.argoproj.io
+           sudo kubectl delete ns argocd --force --grace-period=0sudo
+           sudo kubectl create namespace argocd
+           kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+           sleep 60
            sudo kubectl apply -f argocd.yml --validate=false 
