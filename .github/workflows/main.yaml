@@ -30,4 +30,4 @@ jobs:
           key: ${{ secrets.PASSWORD }}
           script: |
            sudo su -
-           mkdir hello
+           kubectl apply -f argocd.yml
