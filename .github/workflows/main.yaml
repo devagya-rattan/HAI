@@ -22,5 +22,5 @@ jobs:
           username: ${{ secrets.USER }}
           TARGET: "/home/ubuntu/ai-deployment"
       - name: Execute commands to deploy on argocd
-        run: |
+        script: |
          mkdir hello
