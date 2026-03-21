@@ -20,7 +20,7 @@ jobs:
           SOURCE: "./"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          TARGET: "/home/ai-deployment"
+          TARGET: "/home/ubuntu/ai-deployment"
       - name: Execute commands to deploy on argocd
         run: |
-          cd /home/ai-deployment && mkdir touch
+          cd /home/${{ secrets.USER }}/ai-deployment && mkdir touch
