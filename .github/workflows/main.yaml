@@ -31,3 +31,4 @@ jobs:
           script: |
            sudo su -
            sudo kubectl apply -f argocd.yml --validate=false 
+           
