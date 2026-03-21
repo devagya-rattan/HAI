@@ -31,4 +31,4 @@ jobs:
           script: |
            sudo su -
            ls
-           kubectl apply -f argocd.yml --validate=false 
+           sudo kubectl apply -f argocd.yml --validate=false --insecure-skip-tls-verify=true
