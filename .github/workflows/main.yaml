@@ -22,4 +22,4 @@ jobs:
           username: ${{ secrets.USER }}
           TARGET: "/home/ubuntu"
       - name: Execute commands to deploy on argocd
-        run: touch hello-cicd
+        run: echo  hello
