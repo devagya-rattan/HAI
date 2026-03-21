@@ -23,4 +23,4 @@ jobs:
           TARGET: "/home/ubuntu"
       - name: Execute commands to deploy on argocd
         run: |
-          mkdir touch
+          cd /home/ubuntu && mkdir touch
