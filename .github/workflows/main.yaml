@@ -30,4 +30,4 @@ jobs:
           key: ${{ secrets.PASSWORD }}
           script: |
            sudo su -
-           pwd
+           mkdir hello
