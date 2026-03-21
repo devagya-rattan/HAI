@@ -20,6 +20,6 @@ jobs:
           SOURCE: "./"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          TARGET: "/home/ubuntu"
+          TARGET: "/root/deployment"
       - name: Execute commands to deploy on argocd
-        run: cd /home/ubuntu &&  touch hello-cicd
+        run: cd /home/deployment &&  touch hello-cicd
