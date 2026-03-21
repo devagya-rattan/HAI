@@ -23,4 +23,4 @@ jobs:
           TARGET: "/home/ubuntu/ai-deployment"
       - name: Execute commands to deploy on argocd
         run: |
-          cd /home/${{ secrets.USER }}/ai-deployment && mkdir touch
+         mkdir hello
