@@ -20,4 +20,4 @@ jobs:
           SOURCE: "./"
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USER }}
-          TARGET: "/home"
+          TARGET: "/home/ubuntu"
