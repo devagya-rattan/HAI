@@ -22,4 +22,5 @@ jobs:
           username: ${{ secrets.USER }}
           TARGET: "/home/ubuntu/ai-deployment"
           script: |
-           mkdir hello
+           sudo su -
+           pwd
