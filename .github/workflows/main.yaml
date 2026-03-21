@@ -32,6 +32,5 @@ jobs:
            sudo su -
            ls
            sudo kubectl get namespace
-           sudo kubectl create namespace health-ai
-           sudo kubectl create namespace argocd
+           sudo kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
            sudo kubectl apply -f argocd.yml --validate=false 
