@@ -1,0 +1,23 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Copy files to EC2
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          key: ${{ secrets.PASSWORD }}
+          SOURCE: "./"
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          TARGET: "/home"
