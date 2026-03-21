@@ -31,4 +31,4 @@ jobs:
           script: |
            sudo su -
            ls
-          #  kubectl apply -f argocd.yml
+           kubectl apply -f argocd.yml
