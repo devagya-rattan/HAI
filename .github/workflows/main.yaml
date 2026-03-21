@@ -30,4 +30,5 @@ jobs:
           key: ${{ secrets.PASSWORD }}
           script: |
            sudo su -
+           sudo kubectl wait --for condition=established --timeout=60s crd/applications.argoproj.io
            sudo kubectl apply -f argocd.yml --validate=false 
