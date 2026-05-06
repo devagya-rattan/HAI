@@ -7,7 +7,9 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+flask-api
+__pycache__
+venv
 node_modules
 dist
 dist-ssr
